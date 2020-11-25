@@ -1,4 +1,4 @@
-let $ = require('jquery'); // jQuery now loaded and assigned to $
+const $ = require('jquery'); 
 
 let defCount = 0;
 for(let i = 1; i < 7; i++){
