@@ -1,9 +1,8 @@
-const electron = require("electron");
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow } = require("electron");
 const url = require("url");
-const fs = require("fs");
 const path = require("path");
 
+if (require("electron-squirrel-startup")) return app.quit();
 let win;
 
 async function createWindow() {
