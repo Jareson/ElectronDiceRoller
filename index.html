@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title></title>
-    <link
-      rel="stylesheet"
-      href="./bower_components/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="./main.css" />
-    <script>
-      if (typeof module === "object") {
-        window.module = module;
-        module = undefined;
-      }
-    </script>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<link
+			rel="stylesheet"
+			href="./bower_components/bootstrap/dist/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="./main.css" />
+		<script>
+			if (typeof module === "object") {
+				window.module = module;
+				module = undefined;
+			}
+		</script>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	</head>
 
-  <body>
-    <div class="container">
+	<body>
+		<div id="root"></div>
+		<script src="./build/js/app.js"></script>
+		<!-- <div class="container">
       <h1 style="text-align: center">Roll Your Stats!</h1>
       <div id="click-counter1">
         <span class="firstDie"></span>
@@ -61,6 +63,6 @@
         <button class="btn btn-success" id="countbtn">Roll The Dice!</button>
       </div>
       <script src="./view.js"></script>
-    </div>
-  </body>
+    </div> -->
+	</body>
 </html>
