@@ -33,7 +33,7 @@ export default function App() {
 
 function diceLogic() {
 	console.log("Test");
-	new Audio("audio/diceRoll.mp3").play();
+	new Audio("content/audio/diceRoll.mp3").play();
 	for (let i = 1; i < 7; i++) {
 		let diceRolls = rollDice();
 		for (let j = 0; j < 3; j++) {
@@ -51,7 +51,10 @@ function diceLogic() {
 			}
 			$("#click-counter" + i)
 				.find(currentDie)
-				.css("background-image", `url('./images/die${diceRolls[j]}.jpg')`)
+				.css(
+					"background-image",
+					`url('./content/images/die${diceRolls[j]}.jpg')`
+				)
 				.css("background-size", "30px 30px")
 				.css("background-repeat", "no-repeat")
 				.css("background-position", "center")
