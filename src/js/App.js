@@ -12,15 +12,13 @@ function DiceArray(props) {
 }
 
 export default function App() {
+	let diceAmount = 6;
 	return (
 		<div className="container">
 			<h1 style={{ textAlign: "center" }}>Roll Your Stats!</h1>
-			<DiceArray value="1"></DiceArray>
-			<DiceArray value="2"></DiceArray>
-			<DiceArray value="3"></DiceArray>
-			<DiceArray value="4"></DiceArray>
-			<DiceArray value="5"></DiceArray>
-			<DiceArray value="6"></DiceArray>
+			{createArray(diceAmount).map((value, index) => (
+				<DiceArray key={index} value={value}></DiceArray>
+			))}
 			<br />
 			<div className="text-center">
 				<button className="btn btn-success" onClick={() => diceLogic()}>
@@ -32,7 +30,6 @@ export default function App() {
 }
 
 function diceLogic() {
-	console.log("Test");
 	new Audio("content/audio/diceRoll.mp3").play();
 	for (let i = 1; i < 7; i++) {
 		let diceRolls = rollDice();
@@ -80,4 +77,12 @@ function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min) + min);
+}
+
+function createArray(length) {
+	let createdArr = [];
+	for (let i = 1; i < length; i++) {
+		createdArr.push(i);
+	}
+	return createdArr;
 }
