@@ -3,8 +3,9 @@ const url = require("url");
 const path = require("path");
 
 const isDev = !app.isPackaged;
-if (require("electron-squirrel-startup")) return app.quit();
 let win;
+
+if (require("electron-squirrel-startup")) return app.quit();
 
 function createWindow() {
 	win = new BrowserWindow({
@@ -27,9 +28,5 @@ if (isDev) {
 		electron: path.join(__dirname, "node_modules", ".bin", "electron"),
 	});
 }
-
-ipcMain.on("notify", (_, message) => {
-	new Notification({ title: "Notify", body: message }).show();
-});
 
 app.on("ready", createWindow);
